@@ -9,8 +9,8 @@
     "start": "node dist/app.js",
     "start:dev": "nodemon",
     "test": "jest --forceExit --detectOpenHandles",
-    "eslint": "node_modules/.bin/eslint \"src/**/*.*\"",
-    "eslint_fix": "node_modules/.bin/eslint \"src/**/*.*\" --fix"
+    "eslint": "npx eslint \"src/**/*.*\"",
+    "eslint_fix": "npx eslint \"src/**/*.*\" --fix"
   },
   "dependencies": {
     "config": "^3.3.6",
@@ -42,5 +42,10 @@
     "prettier": "^2.3.0",
     "tsc-alias": "^1.2.10",
     "tsconfig-paths": "^3.9.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint"
+    }
   }
 }
